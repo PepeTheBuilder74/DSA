@@ -1,4 +1,8 @@
-/* 3 . DFS */
+/* 3 . DFS 
+SC-> O(N)->visited array , O(V+E)->Adjancey list 
+TC-> O(V+E)
+ASC->O(N)->recursion stack space
+*/
 const int N = 10e5;
 int vis[N];
 
