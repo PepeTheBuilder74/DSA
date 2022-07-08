@@ -1,6 +1,8 @@
 /* 1. create graph*/
 
-/* 1.a Adjency Matrix*/
+/* 1.a Adjency Matrix
+SC->O(V^2) 
+*/
 
 // Adjency graph declaration
 const int x = 10e3;
@@ -50,7 +52,9 @@ int main()
 
 */
 
-/* 1.b Representation through list */
+/* 1.b Representation through list 
+SC-> O(V+E) (vertices+edges)   
+*/
 
 int main()
 {
