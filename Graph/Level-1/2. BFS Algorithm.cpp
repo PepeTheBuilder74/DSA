@@ -1,4 +1,12 @@
-/* 2. BFS   */
+/* 2. BFS 
+
+1.Go to the src node and visit all its adjacent element(child) first
+2.Visit all the adjacent element of previously adjacacent element in level wise 
+3.SC-> O(N)->Queue ,O(N)->Visited array , O(V+E)-> Adjency List ---> We will generally not include adjenct list SC in questions
+4.TC-> O(V+E)
+5.ASC-> O(1)
+
+*/
 
 const int N = 10e5;
 int vis[N];
