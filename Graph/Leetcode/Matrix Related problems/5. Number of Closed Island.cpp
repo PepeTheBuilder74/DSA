@@ -1,9 +1,9 @@
-// 1254. Number of Closed Islands
-/*
+/* 1254. Number of Closed Islands
 Given a 2D grid consists of 0s (land) and 1s (water).  An island is a maximal 4-directionally connected group of 0s and a closed island is an
 island totally (all left, top, right, bottom) surrounded by 1s.
 Return the number of closed islands.
 */
+
 class Solution
 {
 public:
@@ -31,7 +31,10 @@ public:
     {
         int maxRow = grid.size();
         int maxCol = grid[0].size();
+       
         int totIsland = 0;
+        
+        // change all the boundry lands to water because anyhow we cant count those land which are attached to boundary 
         for (int row = 0; row < maxRow; row++)
         {
             for (int col = 0; col < maxCol; col++)
@@ -42,13 +45,18 @@ public:
                 }
             }
         }
+        
+        // main dfs to visit all the islands in inner area 
         for (int row = 0; row < maxRow; row++)
         {
             for (int col = 0; col < maxCol; col++)
             {
+                // viisted array 
                 if (grid[row][col] == 0)
                 {
                     dfs(row, col, grid);
+                    
+                    // increase total island 
                     totIsland++;
                 }
             }
