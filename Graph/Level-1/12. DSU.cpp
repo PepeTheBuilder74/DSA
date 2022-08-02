@@ -11,14 +11,14 @@ ASC->
 
 const int N = 10e5;
 int parent[N];
-int rank[N];
+int Rank[N];
 
 void make(int vertex)
 {
     parent[vertex] = vertex;
 }
 
-void find(int vertex)
+int find(int vertex)
 {
     if (parent[vertex] == vertex)
         return vertex;
@@ -34,18 +34,18 @@ void union(int a, int b)
 
     if (parentOfFirstComponent != parentOfSecondComponent)
     {
-        if (rank[parentOfFirstComponent] > rank[parentOfSecondComponent])
+        if (Rank[parentOfFirstComponent] > Rank[parentOfSecondComponent])
         {
             parent[parentOfSecondComponent] = parent[parentOfFirstComponent];
         }
-        else if (rank[parentOfFirstComponent] < rank[parentOfSecondComponent])
+        else if (Rank[parentOfFirstComponent] < Rank[parentOfSecondComponent])
         {
             parent[parentOfFirstComponent] = parent[parentOfSecondComponent];
         }
         else
         {
             parent[parentOfFirstComponent] = parent[parentOfSecondComponent];
-            rank[parentOfSecondComponent]++;
+            Rank[parentOfSecondComponent]++;
         }
     }
 }
