@@ -7,7 +7,7 @@ vector<vector<int>> subsets(vector<int> &nums)
     vector<vector<int>> ans;
     int n = nums.size();
     int susbset_ct = 1 << n;
-    for (int mask = 0; i < susbset_ct; i++)
+    for (int mask = 0; mask < susbset_ct; mask++)
     {
         vector<int> temp;
         for (int j = 0; j < n; j++)
