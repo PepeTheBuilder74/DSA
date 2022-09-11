@@ -1,4 +1,5 @@
 // Gray Code-https://cses.fi/problemset/task/2205
+// also with recurssion
 
 #include <bits/stdc++.h>
 using namespace std;
