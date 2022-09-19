@@ -16,9 +16,9 @@ int main()
     int low = 1, high = n;
     int r = -1, c = -1;
 
-    // for finding column by keeping row fixed
-    // if high - mid+ 1 == x then we have to move to serach in left half because there are already x number
-    // of rooks in right half
+    // for finding column  keep row fixed
+    // if high - mid+ 1 == x then we have to move to search to left half because there are already x number
+    // of rooks in right half and we cannot place more than x  in that half 
 
     while (low <= high)
     {
@@ -43,8 +43,8 @@ int main()
         }
     }
 
-    // for finding row by keeping column fixed
-    // if high - mid+ 1 == x then we have to move to serach in left half because there are already x number
+    // for finding row  keep column fixed
+    // if high - mid+ 1 == x then we have to move to search in left half because there are already x number
     // of rooks in right half
     low = 1, high = n;
     while (low <= high)
