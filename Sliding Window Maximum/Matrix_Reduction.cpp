@@ -1,7 +1,7 @@
-// Matrix Reducing
-// https://atcoder.jp/contests/abc264/tasks/abc264_c
+// C - Index × A(Continuous ver.)
+// atcoder 267 beginer contest
+// solve it using maths ---> best explanation on soumya batharjee
 
-// editor: https://atcoder.jp/contests/abc264/editorial/4595
 #include <bits/stdc++.h>
 using namespace std;
 const int mod = 1e9 + 7;
@@ -13,83 +13,29 @@ ar<int, 2> v[MxN];
 
 int main()
 {
-
-    // taking input
-    int h1, w1, h2, w2;
-    cin >> h1 >> w1;
-    vector<vector<int>> v1(h1, vector<int>(w1, 0));
-    rep(i, h1)
+    int n, m;
+    cin >> n >> m;
+    vector<ll> v(n), pref(n + 1, 0);
+    // ll prefix = 0;
+    for (int i = 0; i < n; i++)
     {
-        rep(j, w1)
-        {
-            cin >> v1[i][j];
-        }
+        cin >> v[i];
+        pref[i + 1] = pref[i] + v[i];
     }
-    cin >> h2 >> w2;
-    vector<vector<int>> v2(h2, vector<int>(w2, 0));
-    rep(i, h2)
+    ll sum = 0;
+    for (int i = 0; i < m; i++)
     {
-        rep(j, w2)
-        {
-            cin >> v2[i][j];
-        }
+        sum += (i + 1) * v[i];
+        // prefix += v[i];
     }
-
-    // all subset of rows
-    for (int i = 0; i < (1 << h1); i++)
+    ll ans = sum;
+    for (int i = m; i < n; i++)
     {
-        // all subset of columns
-        for (int j = 0; j < (1 << w1); j++)
-        {
 
-            // temporary vectors to store which rows to take and which columns to take
-            vector<int> rvec, cvec;
-            for (int row = 0; row < h1; row++)
-            {
-
-                // if bit is set then take that row
-                if (i & (1 << row))
-                {
-                    rvec.push_back(row);
-                }
-            }
-            for (int col = 0; col < w1; col++)
-            {
-
-                // if bit is set then take that column
-                if (j & (1 << col))
-                {
-                    cvec.push_back(col);
-                }
-            }
-
-            // if size of both vectors are not equal to size of matrix 2 then continue
-            if (rvec.size() != h2 || cvec.size() != w2)
-            {
-                continue;
-            }
-
-            // check if both matrix are equal or not
-            bool match = true;
-            for (int i = 0; i < h2; i++)
-            {
-                for (int j = 0; j < w2; j++)
-                {
-                    if (v1[rvec[i]][cvec[j]] != v2[i][j])
-                    {
-                        match = false;
-                        break;
-                    }
-                }
-            }
-
-            // if both matrix are equal then print yes and return
-            if (match)
-            {
-                cout << "Yes" << endl;
-                return 0;
-            }
-        }
+        sum += m * v[i];
+        sum -= pref[i] - pref[i - m];
+        ans = max(ans, sum);
     }
-    cout << "No" << endl;
+
+    cout << ans << endl;
 }
