@@ -1,7 +1,7 @@
 // C - Submask
-https://atcoder.jp/contests/abc269/tasks/abc269_c
+//https://atcoder.jp/contests/abc269/tasks/abc269_c
 // sum over subset
-
+// https://codeforces.com/blog/entry/45223 --> this is the best explanation of this code
 #include <bits/stdc++.h>
 using namespace std;
 const int mod = 1e9 + 7;
@@ -30,4 +30,4 @@ int main()
     }
 }
 
-// https://codeforces.com/blog/entry/45223 --> this is the best explanation of this code
+
