@@ -1,5 +1,5 @@
 // C - Submask
-// https://atcoder.jp/contests/abc183/tasks/abc183_c
+https://atcoder.jp/contests/abc269/tasks/abc269_c
 // sum over subset
 
 #include <bits/stdc++.h>
