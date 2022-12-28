@@ -67,3 +67,4 @@ int main()
     return 0;
 }
 // extra problems of this type
+// 1. https://atcoder.jp/contests/abc203/tasks/abc203_d?lang=en. 
