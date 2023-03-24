@@ -11,15 +11,21 @@ void build(int node,int start,int end){
      int left=2*node,right=2*node+1;
      build(left,start,mid);
      build(right,mid+1,end);
+     
+     // Only Change for Build in Normal ST
      ST[node]=min(ST[node*2],ST[node*2+1]);
 }
 ll query(int node,int start,int end,int l,int r){
+     
+     // Change Return accn to question
      if(end<l || start>r)return INT_MAX;
      if(start==end){  return ST[node];}
      if(start>=l && end<=r)return ST[node];
      int mid=(start+end)/2;
      ll leftAns= query(node*2,start,mid,l,r);
      ll rightAns= query(node*2+1,mid+1,end,l,r);
+     
+     // depends on question
      return min(leftAns,rightAns);
 }
 
