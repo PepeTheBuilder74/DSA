@@ -103,6 +103,7 @@ void dfs(int node,int par){
     }
     
     tout[node]=timer-1;
+    // tout[node]=timer++;
     // bit.add(tout[node],val[node]);
 }
  
