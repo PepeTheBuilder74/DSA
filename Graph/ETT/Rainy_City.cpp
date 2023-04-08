@@ -223,11 +223,6 @@ void __solve_testcase(int test_case) {
         if(par[lca][0]!=0){
             bit.add(tin[par[lca][0]],-val);
         }
-        cout<<"node1 "<<node1<<' '<<tin[node1]<<' '<<tout[node1]<<nl;
-        cout<<"node2 "<<node2<<' '<<tin[node2]<<' '<<tout[node2]<<nl;
-        cout<<"lca "<<lca<<' '<<tin[lca]<<' '<<tout[lca]<<nl;
-        cout<<par[lca][0]<<' '<<tin[par[lca][0]]<<' '<<tout[par[lca][0]]<<nl;
-        cout<<i<<' '<<bit<<nl;
     }
     ll mx=INF,node=0;
     for(int i=1;i<=n;i++){
@@ -237,5 +232,8 @@ void __solve_testcase(int test_case) {
         }
     }
     cout<<node<<nl;
-
+ // Can be optimized using Difference array instead of BIT
+ // Hackerearth Problem
+ 
+ 
 }
