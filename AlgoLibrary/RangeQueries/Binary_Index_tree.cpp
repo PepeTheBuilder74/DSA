@@ -78,7 +78,7 @@ public:
                 sum -= data[pos];
             }
             mxind--;
-        }
+        }//
         return pos + 1;
     }
     // You can either do one of the following
