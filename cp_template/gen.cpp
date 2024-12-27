@@ -8,17 +8,6 @@ int rand(int a, int b)
 }
 int main(int argc, char *argv[])
 {
-    int t = 1;
-    cout << t << endl;
-    for (int i = 0; i < t; i++)
-    {
-        int n = rand(5, 10);
-        cout << n << endl;
-        for (int i = 0; i < n; i++)
-        {
-            cout << rand(2, 10) << ' ';
-        }
-        cout << endl;
-    }
+
     return 0;
 }
